@@ -2,7 +2,6 @@
   "name": "user-module",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "server": "node server.js",
     "start": "ng serve",
     "build": "ng build",
