@@ -1,0 +1,12 @@
+mat-tab-group {
+    
+}
+
+.example-container {
+  /*display: flex;
+  flex-direction: column;
+  display: flex;*/
+  justify-content: center;
+  align-items: center;
+  width: 50%
+}
