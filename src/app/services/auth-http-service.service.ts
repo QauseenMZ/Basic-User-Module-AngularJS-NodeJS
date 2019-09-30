@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 
 const baseUrl = "";
 
@@ -11,7 +11,7 @@ export class AuthHTTPServiceService {
   constructor(private http : Http) { }
 
   login(email, password){
-    return this.http.get('/').toPromise();
+    return this.http.get('http://localhost:3000/').toPromise();
   }
 
   register(){

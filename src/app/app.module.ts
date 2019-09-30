@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormBuilder, FormGroup, ControlValueAccessor, NgControl} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -42,7 +42,9 @@ import { AuthGuard } from './auth-guard';
   ],
   providers: [
     AuthGuard,
-    AuthHTTPServiceService
+    AuthHTTPServiceService,
+    Http,
+    HttpModule
   ],
   bootstrap: [AppComponent]
 })
