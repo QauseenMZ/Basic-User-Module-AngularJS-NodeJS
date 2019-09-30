@@ -9,7 +9,7 @@ app.use(bodyParser.json());
  *    POST: creates a new contact
  */
 
-app.get("/api/contacts", function(req, res) {
+app.get("/", function(req, res) {
   res.send({status: true})
 });
 

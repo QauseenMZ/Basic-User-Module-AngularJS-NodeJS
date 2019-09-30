@@ -11,7 +11,7 @@ export class AuthHTTPServiceService {
   constructor(private http : Http) { }
 
   login(email, password){
-    // this.http.post()
+    return this.http.get('/').toPromise();
   }
 
   register(){
