@@ -8,8 +8,12 @@ app.use(bodyParser.json());
  *    GET: finds all contacts
  *    POST: creates a new contact
  */
-
-app.get("/", function(req, res) {
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // * just for testing app/purpose
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.get("/abc", function(req, res) {
   res.send({status: true})
 });
 

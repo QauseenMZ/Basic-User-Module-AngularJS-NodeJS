@@ -38,13 +38,12 @@ import { AuthGuard } from './auth-guard';
     MatInputModule,
     MatCardModule,
     MatToolbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
     AuthGuard,
-    AuthHTTPServiceService,
-    Http,
-    HttpModule
+    AuthHTTPServiceService
   ],
   bootstrap: [AppComponent]
 })
