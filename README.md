@@ -14,8 +14,8 @@ Demo: `https://user-module.herokuapp.com/`
 
 ## Execute Locally
 
-Run `npm install`. 
+Run `npm install`. <br><br>
 
-Open two terminals on root.
-Terminal 1: Run `ng serve` for Client/UI. Navigate to `http://localhost:4200/`.
-Terminal 2: Run `node server` for Server REST-API
+Open two terminals on root.<br>
+Terminal 1: Run `ng serve` for Client/UI. Navigate to `http://localhost:4200/`.<br>
+Terminal 2: Run `node server` for Server REST-API<br>
