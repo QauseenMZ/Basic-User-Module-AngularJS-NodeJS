@@ -6,23 +6,28 @@ app.use(express.static(distDir));
 app.use(bodyParser.json());
 
 
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // * just for testing app/purpose
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
 app.get("/abc", function(req, res) {
   res.send({status: true})
 });
 
- var server = app.listen(process.env.PORT || 7000, function () {
+app.post("/user/authenticate", function(req, res) {
+  res.send({status: true, tokenId: "token-id-can-be-generated-by-jwt"})
+});
+
+app.post("/user/register", function(req, res) {
+  res.send({status: true, tokenId: "token-id-can-be-generated-by-jwt"})
+});
+
+var server = app.listen(process.env.PORT || 7000, function () {
     var port = server.address().port;
     console.log("Server now running on port", port);
-  });
+});
 
 // app.get("/api/contacts", function(req, res) {
 //   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
