@@ -9,7 +9,6 @@ export class DbService {
   constructor() {
     if(localStorage.getItem('allUsers')){
       this.allUsers = JSON.parse(localStorage.getItem('allUsers'));
-      console.log('this.allUsers construct: ', this.allUsers)                
     }
     else {
       localStorage.setItem('allUsers', JSON.stringify([]))
@@ -35,8 +34,6 @@ export class DbService {
     return new Promise((resolve, reject) => {
       let exists = false;
       this.allUsers.forEach((data) => {
-        console.log('id: ', data.emailId)
-        console.log('id 2: ', userObj.emailId)
         if(data.emailId == userObj.emailId){
           exists = true
           resolve(false);
@@ -47,7 +44,6 @@ export class DbService {
         this.allUsers.push(userObj);
         localStorage.setItem('allUsers', JSON.stringify(this.allUsers))
         localStorage.setItem('currentUser', JSON.stringify({email : userObj.emailId}));  
-        console.log('this.allUsers: ', this.allUsers)     
         resolve(true)
       }
     })

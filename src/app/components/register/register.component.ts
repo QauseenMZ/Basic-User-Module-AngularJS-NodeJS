@@ -13,12 +13,12 @@ import { User } from '../../models/user.model';
 })
 export class RegisterComponent implements OnInit {
 
-  firstName = new FormControl('fname', [Validators.required]);
-  lastName = new FormControl('lname', [Validators.required]);
-  email = new FormControl('abc@gmail.com', [Validators.required, Validators.email]);
-  password = new FormControl('sdsadsad', [Validators.required, Validators.min(6)]);
-  confirmPassword = new FormControl('sdsadsad', [Validators.required, Validators.min(6)]);
-  phoneNo = new FormControl('045359345', [Validators.required, Validators.min(8)]);
+  firstName = new FormControl('', [Validators.required]);
+  lastName = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required, Validators.min(6)]);
+  confirmPassword = new FormControl('', [Validators.required, Validators.min(6)]);
+  phoneNo = new FormControl('', [Validators.required, Validators.min(8), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]);
 
   constructor(private authService: AuthHTTPServiceService,
         private dbService : DbService,
@@ -32,12 +32,16 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    if(!this.isValidFormValue()){
+      alert('All fields must be filled with appropriate values');
+      return;
+    }
+
     let userObj = new User(this.email.value, 
                             this.password.value, 
                             this.firstName.value,
                             this.lastName.value, 
                             this.phoneNo.value)
-    console.log('userObj: ', userObj)
     this.authService.register(userObj).toPromise().then((success) => {
       this.dbService.registerUser(userObj).then((success) =>{
         if(success){
@@ -56,6 +60,13 @@ export class RegisterComponent implements OnInit {
   getErrorMessage() {
     return this.email.hasError('required') ? 'Email is required' :
         this.email.hasError('email') ? 'Please enter valid email' : '';
+  }
+
+  isValidFormValue(){
+    if(this.email.hasError('required') || this.email.hasError('email') || !this.password.value
+      || !this.firstName.value || !this.lastName.valid || !this.phoneNo || this.phoneNo.hasError('pattern')){
+      return false;
+    }
   }
 
   ngOnInit() {}

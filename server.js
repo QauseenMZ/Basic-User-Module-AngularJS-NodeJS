@@ -12,10 +12,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/abc", function(req, res) {
-  res.send({status: true})
-});
-
 app.post("/user/authenticate", function(req, res) {
   res.send({status: true, tokenId: "token-id-can-be-generated-by-jwt"})
 });

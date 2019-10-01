@@ -1,18 +1,10 @@
-.example-container {
+.main-container {
   display: flex;
   flex-direction: column;
-   /*height: 100vh;*/
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
 }
 
-.example-container > * {
+.main-container > * {
   width: 100%;
-}
-
-.example-card {
-  /*max-width: 400px;*/
 }
 
 mat-card-actions {

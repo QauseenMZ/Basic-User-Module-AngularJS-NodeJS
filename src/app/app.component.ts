@@ -10,10 +10,5 @@ export class AppComponent {
   title = 'user-module';
 
   constructor(private authService: AuthHTTPServiceService){
-    // this.authService.login('', '').then(response => {
-    //   console.log('response: ', response)
-    // }).catch((e) => {
-    //   console.log('Error: ', e)
-    // })
   }
 }

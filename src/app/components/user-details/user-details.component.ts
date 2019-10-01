@@ -11,12 +11,12 @@ import {DbService} from '../../services/db.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-  firstName = new FormControl({disabled: true, value : 'fname' }, [Validators.required]);
-  lastName = new FormControl({disabled: true, value: 'lname'}, [Validators.required]);
-  email = new FormControl({disabled: true, value: 'abc@gmail.com'}, [Validators.required, Validators.email]);
-  password = new FormControl({disabled: true, value : 'sdsadsad'}, [Validators.required, Validators.min(6)]);
-  confirmPassword = new FormControl({disabled: true, value: 'sdsadsad'}, [Validators.required, Validators.min(6)]);
-  phoneNo = new FormControl({disabled: true, value : '045359345'}, [Validators.required, Validators.min(8)]);
+  firstName = new FormControl({disabled: true, value : '' }, [Validators.required]);
+  lastName = new FormControl({disabled: true, value: ''}, [Validators.required]);
+  email = new FormControl({disabled: true, value: ''}, [Validators.required, Validators.email]);
+  password = new FormControl({disabled: true, value : ''}, [Validators.required, Validators.min(6)]);
+  confirmPassword = new FormControl({disabled: true, value: ''}, [Validators.required, Validators.min(6)]);
+  phoneNo = new FormControl({disabled: true, value : ''}, [Validators.required, Validators.min(8)]);
 
   constructor(private dbService : DbService,
         private route: ActivatedRoute,
