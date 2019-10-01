@@ -1,8 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-// var distDir = __dirname + "/dist/";
-// app.use(express.static(distDir));
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 app.use(bodyParser.json());
 
 
