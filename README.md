@@ -14,7 +14,7 @@ Demo: `https://user-module.herokuapp.com/`
 
 ## Execute Locally
 
-Run `npm install`. <br><br>
+Run `npm install`. <br>
 
 Open two terminals on root.<br>
 Terminal 1: Run `ng serve` for Client/UI. Navigate to `http://localhost:4200/`.<br>
